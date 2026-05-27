@@ -21,10 +21,11 @@ export class AppComponent {
   userDetails = {
     UserName: 'iAmJhon',
     email: 'jhon@gmail.com',
-    question: 'Node',
-    description: 'The Developer',
+     secretequestion:'Node',
+    Answer:'My name is kiran',
     isSubscribed: true,
     modeofcontact: 'phone'
+    
   };
 
   onSubmit() {

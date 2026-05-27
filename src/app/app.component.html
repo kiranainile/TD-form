@@ -74,14 +74,14 @@
                  class="form-control"
                  
                  >
-                <option value="role">Hello JavaScript</option>
-                <option value="role">Hello Node.js</option>
+                <option value="role">Name?</option>
+                <option value="role">Profession ?</option>
               </select>
 
               <strong class="text-danger"
               *ngIf="Developer.touched && Developer.hasError('required')"
               > 
-                FevRole is a required field
+                Secret Question is a required field
               </strong>
             </div>
 
@@ -101,7 +101,7 @@
                <strong class="text-danger"
                *ngIf="description.touched && description.hasError('required')"
                >
-                description is a required field
+                Answer is a required field
                </strong>
             </div>
 
