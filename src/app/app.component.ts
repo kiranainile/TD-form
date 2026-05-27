@@ -8,16 +8,37 @@ import { NgForm } from '@angular/forms';
 })
 export class AppComponent {
 
-  title = 'TD-form';
-  @ViewChild('signUp') signUp! :NgForm
-email: any;
-  
+  title = 'td-form';
 
-  onSubmit (){
-    // if(this.signUp.invalid){
-    //   return
-    // }
-    console.log(this.signUp.value)
-    console.log(this.signUp)
+  @ViewChild('signUp') signUp!: NgForm;
+
+  mocArr = [
+    { contactMode: "phone" },
+    { contactMode: "email" },
+    { contactMode: "fax" }
+  ];
+
+  userDetails = {
+    UserName: 'iAmJhon',
+    email: 'jhon@gmail.com',
+    question: 'Node',
+    description: 'The Developer',
+    isSubscribed: true,
+    modeofcontact: 'phone'
+  };
+
+  onSubmit() {
+    if (this.signUp.invalid) {
+      this.signUp.form.markAllAsTouched();
+      return;
+    }
+
+    console.log(this.signUp.value);
+
+    this.signUp.reset();
+  }
+
+  onEdit() {
+    this.signUp.form.patchValue(this.userDetails);
   }
 }
